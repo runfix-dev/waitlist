@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>runfix · launching 1 December 2026</title>
+<meta name="description" content="You built it with AI. runfix keeps it safe, cheap and running. Launching 1 December 2026: join the waitlist.">
+<meta name="theme-color" content="#3b2fa8">
+<meta property="og:title" content="runfix · launching 1 December 2026">
+<meta property="og:description" content="You built it with AI. runfix keeps it safe, cheap and running. Join the waitlist.">
+<meta property="og:type" content="website">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --indigo-900: #1e1868; --indigo-800: #2a2280; --indigo-700: #3b2fa8; --indigo-600: #4f46e5;
+    --indigo-400: #8b83e8; --indigo-200: #c9c5f5; --indigo-100: #dedbfa; --indigo-50: #eeedfc;
+    --page: #ffffff; --page-2: #f4f4fa; --ink: #0b0b12; --ink-2: #45465a; --ink-3: #63647a;
+    --lamp: #ffd27a; --ok: #3ddc97; --alarm: #ff5a5f;
+    --display: "Funnel Display", system-ui, sans-serif;
+    --body: "Inter", system-ui, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; border-radius: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { background: var(--page); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.55; }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--lamp); outline-offset: 3px; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+  @media (min-width: 640px) { .wrap { padding: 0 32px; } }
+  .mono { font-family: var(--mono); }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  /* Hero: indigo night with the pixel town */
+  .hero { position: relative; overflow: hidden; background: var(--indigo-700); color: #fff; }
+  .hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; image-rendering: pixelated; }
+  .hero .inner { position: relative; padding-top: 24px; padding-bottom: 260px; }
+  @media (min-width: 900px) { .hero .inner { padding-bottom: 300px; } }
+  nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .logo { display: inline-flex; align-items: flex-end; gap: 10px; font-family: var(--display); font-weight: 500; font-size: 28px; letter-spacing: -0.03em; line-height: 1; text-decoration: none; }
+  .logo svg { width: 27px; height: 33px; }
+  .chip { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: var(--indigo-900); font-family: var(--mono); font-size: 13px; padding: 6px 10px; }
+  .chip i { width: 8px; height: 8px; background: var(--lamp); display: inline-block; }
+  .hero h1 { margin-top: 72px; max-width: 17ch; font-family: var(--display); font-weight: 500; font-size: clamp(2.6rem, 7vw, 4.6rem); line-height: 1.02; letter-spacing: -0.035em; }
+  .hero .sub { margin-top: 20px; max-width: 38rem; font-size: 1.12rem; color: var(--indigo-100); }
+  .hero .sub b { color: #fff; font-weight: 600; }
+
+  .countdown { margin-top: 36px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: 520px; border: 1px solid rgba(201,197,245,.35); background: rgba(30,24,104,.55); }
+  .countdown div { padding: 14px 12px; border-left: 1px solid rgba(201,197,245,.25); }
+  .countdown div:first-child { border-left: 0; }
+  .countdown b { display: block; font-family: var(--display); font-weight: 500; font-size: clamp(1.8rem, 5vw, 2.6rem); line-height: 1; font-variant-numeric: tabular-nums; }
+  .countdown span { font-family: var(--mono); font-size: 12px; color: var(--indigo-200); }
+  .launch-line { margin-top: 12px; font-family: var(--mono); font-size: 13px; color: var(--indigo-200); }
+
+  form.join { margin-top: 28px; max-width: 640px; }
+  .fields { display: grid; gap: 0; grid-template-columns: 1fr; border: 1px solid rgba(201,197,245,.35); background: var(--indigo-800); }
+  @media (min-width: 640px) { .fields { grid-template-columns: 1.2fr 1fr auto; } }
+  .fields label { display: block; }
+  .fields input { width: 100%; height: 56px; border: 0; border-bottom: 1px solid rgba(201,197,245,.25); background: transparent; color: #fff; font-family: var(--mono); font-size: 15px; padding: 0 16px; }
+  @media (min-width: 640px) { .fields input { border-bottom: 0; border-right: 1px solid rgba(201,197,245,.25); } }
+  .fields input::placeholder { color: rgba(201,197,245,.75); }
+  .fields button { height: 56px; border: 0; background: #fff; color: var(--indigo-700); font-family: var(--body); font-weight: 600; font-size: 16px; padding: 0 22px; cursor: pointer; white-space: nowrap; }
+  .fields button:hover { background: var(--indigo-50); }
+  .fields button[disabled] { opacity: .6; cursor: wait; }
+  .form-note { margin-top: 12px; font-family: var(--mono); font-size: 12.5px; color: var(--indigo-200); }
+  .status { margin-top: 12px; min-height: 1.5em; font-size: .98rem; }
+  .status.ok { color: #fff; }
+  .status.ok::before { content: ""; display: inline-block; width: 9px; height: 9px; background: var(--ok); margin-right: 8px; }
+  .status.err { color: #ffd0d1; }
+
+  /* Sections */
+  section.band { padding: 80px 0; }
+  section.band.alt { background: var(--page-2); }
+  .eyebrow { font-family: var(--mono); font-size: 13px; color: var(--indigo-600); }
+  h2 { margin-top: 10px; font-family: var(--display); font-weight: 500; font-size: clamp(1.9rem, 4vw, 2.5rem); line-height: 1.1; letter-spacing: -0.02em; max-width: 22ch; }
+  .lead { margin-top: 12px; max-width: 40rem; color: var(--ink-2); font-size: 1.08rem; }
+  .rf { font-weight: 600; color: var(--indigo-700); }
+
+  .grid3 { margin-top: 40px; display: grid; gap: 1px; background: var(--indigo-100); border: 1px solid var(--indigo-100); grid-template-columns: 1fr; }
+  @media (min-width: 760px) { .grid3 { grid-template-columns: repeat(3, 1fr); } }
+  .card { background: var(--page); padding: 24px; }
+  .card .tag { font-family: var(--mono); font-size: 12.5px; color: var(--indigo-600); }
+  .card h3 { margin-top: 10px; font-family: var(--display); font-weight: 500; font-size: 1.35rem; line-height: 1.2; }
+  .card p { margin-top: 8px; color: var(--ink-2); font-size: .98rem; }
+  .card small { display: block; margin-top: 12px; font-family: var(--mono); font-size: 11.5px; color: var(--ink-3); }
+
+  .loop { margin-top: 40px; display: grid; gap: 12px; grid-template-columns: 1fr; counter-reset: step; }
+  @media (min-width: 760px) { .loop { grid-template-columns: repeat(5, 1fr); } }
+  .loop li { list-style: none; border-top: 3px solid var(--indigo-600); background: var(--page); padding: 16px; }
+  .loop li::before { counter-increment: step; content: counter(step); font-family: var(--mono); font-size: 12px; color: var(--indigo-600); }
+  .loop b { display: block; margin-top: 6px; font-family: var(--display); font-weight: 500; font-size: 1.15rem; }
+  .loop span { display: block; margin-top: 4px; color: var(--ink-2); font-size: .93rem; }
+
+  .offer { margin-top: 36px; display: grid; gap: 24px; grid-template-columns: 1fr; align-items: start; }
+  @media (min-width: 760px) { .offer { grid-template-columns: 1.1fr 1fr; } }
+  .price { border: 1px solid var(--indigo-600); padding: 24px; }
+  .price .big { font-family: var(--display); font-weight: 500; font-size: 2.6rem; line-height: 1; letter-spacing: -0.02em; }
+  .price ul { margin-top: 16px; display: grid; gap: 8px; }
+  .price li { list-style: none; display: flex; gap: 10px; color: var(--ink-2); }
+  .price li::before { content: ""; flex: none; width: 8px; height: 8px; margin-top: .55em; background: var(--indigo-600); }
+
+  .works { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .works span { border: 1px solid var(--indigo-200); background: var(--page); padding: 6px 10px; font-family: var(--mono); font-size: 13px; color: var(--ink-2); }
+
+  /* Closing + footer */
+  .closing { background: var(--indigo-700); color: #fff; padding: 72px 0; }
+  .closing h2 { color: #fff; }
+  .closing .lead { color: var(--indigo-100); }
+  .closing a.btn { display: inline-block; margin-top: 24px; background: #fff; color: var(--indigo-700); font-weight: 600; text-decoration: none; padding: 16px 22px; }
+  .closing a.btn:hover { background: var(--indigo-50); }
+  footer { background: var(--indigo-900); color: var(--indigo-200); font-family: var(--mono); font-size: 12.5px; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 18px; padding-bottom: 18px; }
+  footer a { color: #fff; }
+
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+
+<header class="hero" id="top">
+  <canvas id="town" aria-hidden="true"></canvas>
+  <div class="wrap inner">
+    <nav aria-label="Main">
+      <a class="logo" href="#top" aria-label="runfix">
+        <svg viewBox="0 0 9 11" shape-rendering="crispEdges" aria-hidden="true"><g id="tower"></g></svg>
+        runfix
+      </a>
+      <span class="chip"><i></i>launching 1 Dec 2026</span>
+    </nav>
+
+    <h1>You built it with AI. We keep it safe, cheap and running.</h1>
+    <p class="sub"><b>runfix</b> finds leaks before strangers do, stops surprise bills, and fixes what breaks. You don&apos;t need to code. You say what you want, see the plan, and nothing changes until you say yes.</p>
+
+    <div class="countdown" role="timer" aria-live="off" aria-label="Time until launch">
+      <div><b id="cd-d">--</b><span>days</span></div>
+      <div><b id="cd-h">--</b><span>hours</span></div>
+      <div><b id="cd-m">--</b><span>minutes</span></div>
+      <div><b id="cd-s">--</b><span>seconds</span></div>
+    </div>
+    <p class="launch-line" id="launch-line">opens 1 December 2026 · join the waitlist for early access</p>
+
+    <form class="join" id="join" novalidate aria-label="Join the waitlist">
+      <div class="fields">
+        <label><span class="sr">Your email</span><input id="email" name="email" type="email" autocomplete="email" placeholder="you@yourapp.com" required></label>
+        <label><span class="sr">Your app's address (optional)</span><input id="app" name="app" type="text" inputmode="url" autocomplete="url" placeholder="yourapp.com (optional)"></label>
+        <button type="submit" id="join-btn">Join the waitlist</button>
+      </div>
+      <p class="form-note">One email when we launch, nothing else · early list gets a free security check of their app</p>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</header>
+
+<main>
+  <section class="band" aria-labelledby="problems-title">
+    <div class="wrap">
+      <p class="eyebrow">what goes wrong after launch</p>
+      <h2 id="problems-title">Your app works. Then real users arrive.</h2>
+      <p class="lead">AI tools build fast. They don&apos;t watch your app at 3 a.m., read your bills, or notice when strangers can read your users&apos; data.</p>
+      <div class="grid3">
+        <article class="card">
+          <p class="tag">data · exposed</p>
+          <h3>Strangers can read your users&apos; data</h3>
+          <p>170 of 1,645 apps built with one popular AI builder let anyone read their database.</p>
+          <small>CVE-2025-48757 · Superblocks, May 2025</small>
+        </article>
+        <article class="card">
+          <p class="tag">spend · surprise</p>
+          <h3>A leaked key becomes a bill</h3>
+          <p>Code written with AI help leaks secrets about twice as often. Bots run up AI and hosting bills overnight.</p>
+          <small>GitGuardian, State of Secrets Sprawl 2026</small>
+        </article>
+        <article class="card">
+          <p class="tag">uptime · silent</p>
+          <h3>It breaks and a customer tells you</h3>
+          <p>Without monitoring, the first alert is an angry email. Fixing it means hiring someone at $50–150 an hour.</p>
+          <small>Upwork and freelancer rates, 2026</small>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt" aria-labelledby="how-title">
+    <div class="wrap">
+      <p class="eyebrow">how runfix works</p>
+      <h2 id="how-title">Say what you want. runfix does the rest, after your yes.</h2>
+      <ol class="loop">
+        <li><b>Ask</b><span>&ldquo;Stop the bots hammering my API.&rdquo; Plain words.</span></li>
+        <li><b>Advice</b><span>runfix checks your own data: do you need it? It says why.</span></li>
+        <li><b>Plan</b><span>What changes, what could break, what it costs. In plain words.</span></li>
+        <li><b>Yes</b><span>Nothing happens until you say yes.</span></li>
+        <li><b>Safe rollout</b><span>New version beside the old, checked, then switched. One click undoes it.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="get-title">
+    <div class="wrap">
+      <p class="eyebrow">what you get on day one</p>
+      <h2 id="get-title">One place that keeps your app safe, affordable and up.</h2>
+      <div class="grid3">
+        <article class="card"><p class="tag">prove</p><h3>Know your data is private</h3><p>runfix tries to read your data the way a stranger would. If it can, you see the proof and the fix.</p></article>
+        <article class="card"><p class="tag">guard</p><h3>A cap on every bill</h3><p>See OpenAI, Anthropic, Vercel and Supabase spend together, with warnings before a spike hurts.</p></article>
+        <article class="card"><p class="tag">watch</p><h3>Hear about problems first</h3><p>Checks every minute, explained in plain English, sent where you already are.</p></article>
+        <article class="card"><p class="tag">fix</p><h3>Fixes arrive ready to approve</h3><p>When something breaks, runfix finds the cause and prepares the fix with a test. You read it and say yes.</p></article>
+        <article class="card"><p class="tag">undo</p><h3>Every change can be undone</h3><p>Your setup is saved as versions, so going back is one click.</p></article>
+        <article class="card"><p class="tag">backups</p><h3>Backups that really restore</h3><p>Encrypted backups, and regular tests that prove they come back.</p></article>
+      </div>
+      <div class="works" aria-label="Works with">
+        <span>Lovable</span><span>Bolt</span><span>v0</span><span>Cursor</span><span>Claude Code</span><span>Supabase</span><span>Vercel</span><span>Cloudflare</span><span>Stripe</span><span>GitHub</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt" aria-labelledby="price-title">
+    <div class="wrap">
+      <p class="eyebrow">pricing</p>
+      <h2 id="price-title">Pay only for what runfix does.</h2>
+      <div class="offer">
+        <p class="lead">No plans and no monthly fee. A security check, a fix or a gigabyte of logs each has a small price, paid from a balance with a cap you set.</p>
+        <div class="price">
+          <p class="mono" style="font-size:12.5px;color:var(--ink-3)">at launch</p>
+          <p class="big">$20 credit</p>
+          <ul>
+            <li>for every new account, for the first 30 days</li>
+            <li>startups and agency partners can apply for $100</li>
+            <li>$10 for each founder you invite who starts using runfix</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" aria-labelledby="close-title">
+    <div class="wrap">
+      <h2 id="close-title">Be first in on 1 December.</h2>
+      <p class="lead">Join the waitlist and get a free security check of your app on launch day.</p>
+      <a class="btn" href="#join" id="close-btn">Join the waitlist</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>[runfix] launching 1 December 2026</span>
+    <span>questions? <a href="mailto:hello@runfix.dev">hello@runfix.dev</a> · <a href="https://runfix.dev">runfix.dev</a></span>
+  </div>
+</footer>
+
+<script>
+(() => {
+  /* ---- settings ---------------------------------------------------------------
+     LAUNCH: when the countdown reaches zero (ISO time with zone).
+     WAITLIST_ENDPOINT: where sign-ups are sent as JSON {email, app, source}.
+       - Formspree: "https://formspree.io/f/<your-form-id>"
+       - your own API, e.g. "https://api.runfix.dev/v1/waitlist"
+       - empty: the button opens an email to FALLBACK_EMAIL instead (nothing is lost).
+  ----------------------------------------------------------------------------- */
+  const LAUNCH = new Date("2026-12-01T00:00:00Z");
+  const WAITLIST_ENDPOINT = "";
+  const FALLBACK_EMAIL = "hello@runfix.dev";
+
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---- logo: the pixel watchtower ---- */
+  const TOWER = ["...www...", "..wwwww..", ".wwwwwww.", ".wyyyyyw.", ".wwwwwww.", "..w...w..", "..ww.ww..", "..w.w.w..", ".w.w.w.w.", ".ww...ww.", "w.......w"];
+  const g = document.getElementById("tower");
+  TOWER.forEach((row, y) => [...row].forEach((c, x) => {
+    if (c === ".") return;
+    const r = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+    r.setAttribute("x", x); r.setAttribute("y", y); r.setAttribute("width", 1); r.setAttribute("height", 1);
+    r.setAttribute("fill", c === "y" ? "#ffd27a" : "#ffffff");
+    g.appendChild(r);
+  }));
+
+  /* ---- countdown ---- */
+  const el = (id) => document.getElementById(id);
+  const pad = (n) => String(n).padStart(2, "0");
+  function tick() {
+    const ms = LAUNCH - Date.now();
+    if (ms <= 0) {
+      ["cd-d", "cd-h", "cd-m", "cd-s"].forEach((id) => (el(id).textContent = "00"));
+      el("launch-line").textContent = "runfix is live · sign up at runfix.dev";
+      return false;
+    }
+    const s = Math.floor(ms / 1000);
+    el("cd-d").textContent = Math.floor(s / 86400);
+    el("cd-h").textContent = pad(Math.floor((s % 86400) / 3600));
+    el("cd-m").textContent = pad(Math.floor((s % 3600) / 60));
+    el("cd-s").textContent = pad(s % 60);
+    return true;
+  }
+  if (tick()) setInterval(tick, 1000);
+
+  /* ---- waitlist form ---- */
+  const form = el("join"), email = el("email"), app = el("app"), btn = el("join-btn"), status = el("status");
+  const say = (text, kind) => { status.textContent = text; status.className = "status " + (kind || ""); };
+  const validEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const em = email.value.trim(), ap = app.value.trim();
+    if (!validEmail(em)) { say("Enter your email, like you@yourapp.com.", "err"); email.focus(); return; }
+    if (!WAITLIST_ENDPOINT) {
+      const body = encodeURIComponent("Please add me to the runfix waitlist.\n\nEmail: " + em + (ap ? "\nApp: " + ap : ""));
+      window.location.href = "mailto:" + FALLBACK_EMAIL + "?subject=" + encodeURIComponent("runfix waitlist") + "&body=" + body;
+      say("Your email app opened with the message ready. Send it and you're on the list.", "ok");
+      return;
+    }
+    btn.disabled = true; say("Adding you…");
+    try {
+      const res = await fetch(WAITLIST_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ email: em, app: ap, source: "waitlist-page" }) });
+      if (!res.ok) throw new Error(String(res.status));
+      form.reset();
+      say("You're on the list. We'll email " + em + " on 1 December.", "ok");
+    } catch {
+      say("That didn't go through. Try again, or email " + FALLBACK_EMAIL + ".", "err");
+    } finally { btn.disabled = false; }
+  });
+  el("close-btn").addEventListener("click", () => setTimeout(() => email.focus({ preventScroll: true }), 300));
+
+  /* ---- the pixel night town ---- */
+  const cv = el("town"), ctx = cv.getContext("2d");
+  const P = 4; // screen pixels per art pixel
+  let W = 0, H = 0, buildings = [], stars = [], tower = null;
+  const COLORS = { sky: ["#3b2fa8", "#33299a", "#2a2280"], far: "#2a2280", near: "#1e1868", win: "#ffd27a", winOff: "#3b2fa8", beam: "rgba(255,210,122,0.09)" };
+  const rand = (() => { let s = 7; return () => (s = (s * 16807) % 2147483647) / 2147483647; })();
+
+  function layout() {
+    const r = cv.getBoundingClientRect();
+    W = Math.ceil(r.width / P); H = Math.ceil(r.height / P);
+    cv.width = W; cv.height = H;
+    stars = Array.from({ length: Math.floor(W * H / 520) }, () => ({ x: Math.floor(rand() * W), y: Math.floor(rand() * (H - 60)), p: rand() * 6.28 }));
+    const ground = H - 14;
+    buildings = [];
+    let x = 2;
+    const towerX = Math.floor(W * 0.84);
+    while (x < W - 2) {
+      if (Math.abs(x - towerX) < 10) { x += 12; continue; }
+      const w = 8 + Math.floor(rand() * 10), h = 14 + Math.floor(rand() * Math.min(34, H * 0.28));
+      const far = rand() < 0.4;
+      buildings.push({ x, w, h: far ? h + 8 : h, far, ground, wins: [], alarm: false });
+      x += w + 2 + Math.floor(rand() * 4);
+    }
+    buildings.forEach((b) => {
+      for (let wy = b.ground - b.h + 3; wy < b.ground - 3; wy += 4)
+        for (let wx = b.x + 2; wx < b.x + b.w - 2; wx += 3) b.wins.push({ x: wx, y: wy, on: rand() < 0.45, t: rand() * 8 });
+    });
+    const near = buildings.filter((b) => !b.far);
+    if (near.length) near[Math.floor(near.length * 0.35)].alarm = true;
+    tower = { x: towerX, ground };
+  }
+
+  function px(x, y, w, h, c) { ctx.fillStyle = c; ctx.fillRect(x, y, w, h); }
+
+  function draw(t) {
+    // Sky: one indigo, with a dithered haze only near the town (never behind the text)
+    px(0, 0, W, H, COLORS.sky[0]);
+    const haze = tower.ground - 46;
+    for (let y = haze; y < tower.ground; y++) {
+      const k = (y - haze) / 46;
+      for (let x = (y % 2); x < W; x += 2) if (((x * 7 + y * 13) % 16) / 16 < k) px(x, y, 1, 1, COLORS.sky[1]);
+    }
+    // Stars and moon
+    stars.forEach((s) => { if (Math.sin(t / 900 + s.p) > -0.2) px(s.x, s.y, 1, 1, Math.sin(t / 700 + s.p) > 0.7 ? "#ffffff" : "#c9c5f5"); });
+    const mx = Math.min(W - 7, Math.floor(W * 0.9)), my = W < 140 ? 34 : Math.floor(H * 0.12);
+    for (let dy = -4; dy <= 4; dy++) for (let dx = -4; dx <= 4; dx++) if (dx * dx + dy * dy <= 16) px(mx + dx, my + dy, 1, 1, "#eeedfc");
+    // Watchtower beam (sweeps)
+    const tx = tower.x, ty = tower.ground - 40;
+    const ang = reduce ? -1.95 : -1.95 + Math.sin(t / 2600) * 0.35; // mostly upward, away from the text
+    ctx.fillStyle = COLORS.beam;
+    ctx.beginPath(); ctx.moveTo(tx + 4, ty + 3);
+    const reach = H * 0.9;
+    ctx.lineTo(tx + 4 + Math.cos(ang - 0.08) * reach, ty + 3 + Math.sin(ang - 0.08) * reach);
+    ctx.lineTo(tx + 4 + Math.cos(ang + 0.08) * reach, ty + 3 + Math.sin(ang + 0.08) * reach);
+    ctx.closePath(); ctx.fill();
+    // Buildings (far first)
+    [...buildings].sort((a, b) => b.far - a.far).forEach((b) => {
+      px(b.x, b.ground - b.h, b.w, b.h, b.far ? COLORS.far : COLORS.near);
+      b.wins.forEach((w) => {
+        const on = reduce ? w.on : (w.on ? Math.sin(t / 1500 + w.t) > -0.85 : Math.sin(t / 2600 + w.t) > 0.97);
+        px(w.x, w.y, 1, 2, on ? (b.alarm && Math.sin(t / 300) > 0 ? "#ff5a5f" : COLORS.win) : COLORS.winOff);
+      });
+    });
+    // Tower: legs, cabin with lamp
+    for (let y = ty + 6; y < tower.ground; y++) { px(tx + 1 + ((y - ty) % 6 < 3 ? 0 : 1), y, 1, 1, "#ffffff"); px(tx + 7 - ((y - ty) % 6 < 3 ? 0 : 1), y, 1, 1, "#ffffff"); if ((y - ty) % 6 === 0) px(tx + 1, y, 7, 1, "#ffffff"); }
+    px(tx, ty, 9, 6, "#ffffff"); px(tx + 1, ty + 2, 7, 2, COLORS.win); px(tx + 1, ty - 2, 7, 2, "#ffffff"); px(tx + 3, ty - 3, 3, 1, "#ffffff");
+    // Ground
+    px(0, tower.ground, W, H - tower.ground, COLORS.near);
+    for (let x = 0; x < W; x += 2) px(x, tower.ground, 1, 1, COLORS.far);
+    // The fixer walks from the tower to the alarm building and back
+    const alarm = buildings.find((b) => b.alarm);
+    if (alarm) {
+      const from = tx - 2, to = alarm.x + alarm.w + 2;
+      const k = reduce ? 0.5 : (Math.sin(t / 5200) + 1) / 2;
+      const fx = Math.round(from + (to - from) * k), fy = tower.ground - 6, step = Math.floor(t / 180) % 2;
+      px(fx + 1, fy, 2, 1, "#ffd27a"); px(fx + 1, fy + 1, 2, 1, "#2a2280"); px(fx, fy + 2, 4, 1, "#ffffff"); px(fx + 1, fy + 3, 2, 2, "#ffffff");
+      px(fx + (step ? 0 : 1), fy + 5, 1, 1, "#ffffff"); px(fx + (step ? 3 : 2), fy + 5, 1, 1, "#ffffff");
+    }
+  }
+
+  let raf = 0, visible = true;
+  function loop(t) { draw(t); if (!reduce && visible) raf = requestAnimationFrame(loop); }
+  function start() { cancelAnimationFrame(raf); layout(); if (reduce) draw(0); else raf = requestAnimationFrame(loop); }
+  new ResizeObserver(() => start()).observe(cv);
+  new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible && !reduce) { cancelAnimationFrame(raf); raf = requestAnimationFrame(loop); } }).observe(cv);
+  document.addEventListener("visibilitychange", () => { visible = !document.hidden; if (visible && !reduce) { cancelAnimationFrame(raf); raf = requestAnimationFrame(loop); } });
+})();
+</script>
+</body>
+</html>
