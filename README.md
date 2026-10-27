@@ -1,6 +1,6 @@
 # runfix waitlist
 
-The "launching 1 December 2026" page for runfix: one static `index.html` (no build step), with a countdown and a waitlist form.
+The "launching 1 December 2026" page for runfix: one static `index.html` (no build step), with a countdown, a Discord invite and an email address to join the waitlist.
 
 ## Publish on GitHub Pages
 
@@ -10,13 +10,14 @@ The "launching 1 December 2026" page for runfix: one static `index.html` (no bui
 
 To use your own domain (for example `waitlist.runfix.dev`), add it in Settings → Pages → Custom domain and create the DNS record GitHub shows.
 
-## Collect sign-ups
+## How people join
 
-Open `index.html` and set the settings at the top of the script:
+There is no form. The page offers two ways in, in the hero and again at the bottom:
 
-- `WAITLIST_ENDPOINT` — where the form sends `{"email", "app", "source"}` as JSON. A free option is [Formspree](https://formspree.io): create a form and paste its URL (`https://formspree.io/f/…`). Later you can point it at the runfix API.
-- While it's empty, the button opens an email to `FALLBACK_EMAIL` (hello@runfix.dev) with the sign-up written out, so nobody is lost.
-- `LAUNCH` — the launch moment (default `2026-12-01T00:00:00Z`). After it passes, the page says runfix is live.
+- **Join the Discord**: the invite link `https://discord.gg/ER9rfHxDwD` (also in the nav and footer). To track how many people join from this page, create a separate permanent invite in Discord → Server Settings → Invites, and replace the code everywhere in `index.html`.
+- **Email us to join the waitlist**: opens a pre-filled email to `hello@runfix.dev`. The address is also shown as text with a copy button, for people whose browser has no mail app.
+
+`LAUNCH` at the top of the script sets the countdown (default `2026-12-01T00:00:00Z`). After it passes, the page says runfix is live.
 
 ## Preview locally
 
