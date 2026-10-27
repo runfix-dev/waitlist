@@ -43,6 +43,11 @@
   .logo svg { width: 27px; height: 33px; }
   .chip { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: var(--indigo-900); font-family: var(--mono); font-size: 13px; padding: 6px 10px; }
   .chip i { width: 8px; height: 8px; background: var(--lamp); display: inline-block; }
+  .nav-right { display: flex; align-items: center; gap: 10px; }
+  @media (max-width: 479px) { .nav-right .chip { display: none; } }
+  .ico { width: 16px; height: 16px; flex: none; fill: currentColor; }
+  .navlink { display: inline-flex; align-items: center; gap: 8px; color: #fff; text-decoration: none; font-family: var(--mono); font-size: 13px; padding: 5px 10px; border: 1px solid rgba(201,197,245,.45); }
+  .navlink:hover { background: rgba(255,255,255,.08); }
   .hero h1 { margin-top: 72px; max-width: 17ch; font-family: var(--display); font-weight: 500; font-size: clamp(2.6rem, 7vw, 4.6rem); line-height: 1.02; letter-spacing: -0.035em; }
   .hero .sub { margin-top: 20px; max-width: 38rem; font-size: 1.12rem; color: var(--indigo-100); }
   .hero .sub b { color: #fff; font-weight: 600; }
@@ -69,6 +74,8 @@
   .status.ok { color: #fff; }
   .status.ok::before { content: ""; display: inline-block; width: 9px; height: 9px; background: var(--ok); margin-right: 8px; }
   .status.err { color: #ffd0d1; }
+  .after { margin-top: 2px; font-size: .98rem; color: var(--indigo-100); }
+  .after a { color: #fff; font-weight: 600; }
 
   /* Sections */
   section.band { padding: 80px 0; }
@@ -104,6 +111,12 @@
   .works { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 8px; }
   .works span { border: 1px solid var(--indigo-200); background: var(--page); padding: 6px 10px; font-family: var(--mono); font-size: 13px; color: var(--ink-2); }
 
+  .community-cta { margin-top: 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+  a.btn-discord { display: inline-flex; align-items: center; gap: 10px; background: var(--indigo-700); color: #fff; font-weight: 600; text-decoration: none; padding: 14px 20px; }
+  a.btn-discord:hover { background: var(--indigo-800); }
+  a.btn-discord .ico { width: 20px; height: 20px; }
+  .community-cta small { font-family: var(--mono); font-size: 12.5px; color: var(--ink-3); }
+
   /* Closing + footer */
   .closing { background: var(--indigo-700); color: #fff; padding: 72px 0; }
   .closing h2 { color: #fff; }
@@ -119,6 +132,10 @@
 </head>
 <body>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-discord" viewBox="0 0 24 24"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></symbol>
+</svg>
+
 <header class="hero" id="top">
   <canvas id="town" aria-hidden="true"></canvas>
   <div class="wrap inner">
@@ -127,7 +144,10 @@
         <svg viewBox="0 0 9 11" shape-rendering="crispEdges" aria-hidden="true"><g id="tower"></g></svg>
         runfix
       </a>
-      <span class="chip"><i></i>launching 1 Dec 2026</span>
+      <div class="nav-right">
+        <span class="chip"><i></i>launching 1 Dec 2026</span>
+        <a class="navlink" href="https://discord.gg/ER9rfHxDwD" target="_blank" rel="noopener" aria-label="Join the runfix Discord"><svg class="ico" aria-hidden="true"><use href="#i-discord"/></svg>Discord</a>
+      </div>
     </nav>
 
     <h1>You built it with AI. We keep it safe, cheap and running.</h1>
@@ -149,6 +169,7 @@
       </div>
       <p class="form-note">One email when we launch, nothing else · early list gets a free security check of their app</p>
       <p class="status" id="status" role="status" aria-live="polite"></p>
+      <p class="after" id="after" hidden>While you wait: <a href="https://discord.gg/ER9rfHxDwD" target="_blank" rel="noopener">join founders keeping their apps alive on Discord</a> →</p>
     </form>
   </div>
 </header>
@@ -233,6 +254,23 @@
     </div>
   </section>
 
+  <section class="band" aria-labelledby="community-title">
+    <div class="wrap">
+      <p class="eyebrow">community</p>
+      <h2 id="community-title">Ship with AI? You&apos;re not on your own.</h2>
+      <p class="lead">Join founders who build with Lovable, Cursor, Bolt, Replit and Claude Code, and keep their apps alive after launch.</p>
+      <div class="grid3">
+        <article class="card"><p class="tag">help</p><h3>Get unstuck, fast</h3><p>App down, deploy failing, key leaked? Ask in the help forum and get a real answer from people who&apos;ve been there.</p></article>
+        <article class="card"><p class="tag">live</p><h3>Weekly office hours</h3><p>Bring a broken app. We fix it live on stage, so you see exactly how it&apos;s done.</p></article>
+        <article class="card"><p class="tag">early</p><h3>Shape what we build</h3><p>Early members test runfix first and decide what it fixes next.</p></article>
+      </div>
+      <div class="community-cta">
+        <a class="btn-discord" href="https://discord.gg/ER9rfHxDwD" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-discord"/></svg>Join the Discord</a>
+        <small>free · no spam · we never DM you first</small>
+      </div>
+    </div>
+  </section>
+
   <section class="closing" aria-labelledby="close-title">
     <div class="wrap">
       <h2 id="close-title">Be first in on 1 December.</h2>
@@ -245,7 +283,7 @@
 <footer>
   <div class="wrap">
     <span>[runfix] launching 1 December 2026</span>
-    <span>questions? <a href="mailto:hello@runfix.dev">hello@runfix.dev</a> · <a href="https://runfix.dev">runfix.dev</a></span>
+    <span>questions? <a href="mailto:hello@runfix.dev">hello@runfix.dev</a> · <a href="https://discord.gg/ER9rfHxDwD" target="_blank" rel="noopener">Discord</a> · <a href="https://runfix.dev">runfix.dev</a></span>
   </div>
 </footer>
 
@@ -295,7 +333,7 @@
   if (tick()) setInterval(tick, 1000);
 
   /* ---- waitlist form ---- */
-  const form = el("join"), email = el("email"), app = el("app"), btn = el("join-btn"), status = el("status");
+  const form = el("join"), email = el("email"), app = el("app"), btn = el("join-btn"), status = el("status"), after = el("after");
   const say = (text, kind) => { status.textContent = text; status.className = "status " + (kind || ""); };
   const validEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
   form.addEventListener("submit", async (e) => {
@@ -306,6 +344,7 @@
       const body = encodeURIComponent("Please add me to the runfix waitlist.\n\nEmail: " + em + (ap ? "\nApp: " + ap : ""));
       window.location.href = "mailto:" + FALLBACK_EMAIL + "?subject=" + encodeURIComponent("runfix waitlist") + "&body=" + body;
       say("Your email app opened with the message ready. Send it and you're on the list.", "ok");
+      after.hidden = false;
       return;
     }
     btn.disabled = true; say("Adding you…");
@@ -315,6 +354,7 @@
       if (!res.ok) throw new Error(String(res.status));
       form.reset();
       say("You're on the list. We'll email " + em + " on 1 December.", "ok");
+      after.hidden = false;
     } catch {
       say("That didn't go through. Try again, or email " + FALLBACK_EMAIL + ".", "err");
     } finally { btn.disabled = false; }
