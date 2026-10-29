@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>runfix · launching 1 December 2026</title>
-<meta name="description" content="You built it with AI. runfix keeps it safe, cheap and running. Launching 1 December 2026: join the waitlist.">
+<title>runfix · the safety net for apps built with AI</title>
+<meta name="description" content="Ship with AI. Sleep at night. runfix checks every change before your users see it, fixes what breaks with proof, and stops surprise bills. Launching 1 December 2026.">
 <meta name="theme-color" content="#3b2fa8">
-<meta property="og:title" content="runfix · launching 1 December 2026">
-<meta property="og:description" content="You built it with AI. runfix keeps it safe, cheap and running. Join the waitlist.">
+<meta property="og:title" content="runfix · the safety net for apps built with AI">
+<meta property="og:description" content="Ship with AI. Sleep at night. Checked before it ships, fixed with proof, no surprise bills. Founding members open now.">
 <meta property="og:type" content="website">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,7 +41,7 @@
   nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
   .logo { display: inline-flex; align-items: flex-end; gap: 10px; font-family: var(--display); font-weight: 500; font-size: 28px; letter-spacing: -0.03em; line-height: 1; text-decoration: none; }
   .logo svg { width: 27px; height: 33px; }
-  .chip { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: var(--indigo-900); font-family: var(--mono); font-size: 13px; padding: 6px 10px; }
+  .chip { white-space: nowrap; display: inline-flex; align-items: center; gap: 8px; background: #fff; color: var(--indigo-900); font-family: var(--mono); font-size: 13px; padding: 6px 10px; }
   .chip i { width: 8px; height: 8px; background: var(--lamp); display: inline-block; }
   .nav-right { display: flex; align-items: center; gap: 10px; }
   @media (max-width: 479px) { .nav-right .chip { display: none; } }
@@ -65,6 +65,8 @@
   a.cta.primary { background: #fff; color: var(--indigo-700); border-color: #fff; }
   a.cta.primary:hover { background: var(--indigo-50); }
   a.cta .ico { width: 20px; height: 20px; }
+  a.cta.ink { background: var(--indigo-700); color: #fff; border-color: var(--indigo-700); }
+  a.cta.ink:hover { background: var(--indigo-800); }
   @media (max-width: 479px) { a.cta { width: 100%; justify-content: center; } }
   .form-note { margin-top: 14px; font-family: var(--mono); font-size: 12.5px; color: var(--indigo-200); }
   .copy { background: none; border: 0; border-bottom: 1px dashed currentColor; color: #fff; font: inherit; padding: 0; cursor: pointer; }
@@ -126,6 +128,18 @@
   .int.soon { border-style: dashed; color: var(--ink-3); }
   .int.soon svg { opacity: .55; filter: grayscale(1); }
 
+  .promise { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }
+  .promise li { display: inline-flex; align-items: center; gap: 8px; background: var(--page); border: 1px solid var(--indigo-100); padding: 8px 12px; font-size: 14.5px; }
+  .promise li::before { content: ""; width: 8px; height: 8px; background: var(--ok); flex: none; }
+  .card .soon { display: inline-block; margin-left: 6px; font-family: var(--mono); font-size: 11px; color: var(--ink-3); border: 1px dashed var(--ink-3); padding: 1px 6px; vertical-align: middle; }
+  .faq { margin-top: 32px; max-width: 46rem; border-top: 1px solid var(--indigo-100); }
+  .faq details { border-bottom: 1px solid var(--indigo-100); padding: 18px 0; }
+  .faq summary { cursor: pointer; font-family: var(--display); font-weight: 500; font-size: 1.15rem; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; font-family: var(--mono); color: var(--indigo-600); }
+  .faq details[open] summary::after { content: "–"; }
+  .faq p { margin-top: 10px; color: var(--ink-2); }
+
   /* Closing + footer */
   .closing { background: var(--indigo-700); color: #fff; padding: 72px 0; }
   .closing h2 { color: #fff; }
@@ -179,13 +193,13 @@
         runfix
       </a>
       <div class="nav-right">
-        <span class="chip"><i></i>launching 1 Dec 2026</span>
+        <span class="chip"><i></i>founding members open · 1 Dec</span>
         <a class="navlink" href="https://discord.gg/ER9rfHxDwD" target="_blank" rel="noopener" aria-label="Join the runfix Discord"><svg class="ico" aria-hidden="true"><use href="#i-discord"/></svg>Discord</a>
       </div>
     </nav>
 
-    <h1>You built it with AI. We keep it safe, cheap and running.</h1>
-    <p class="sub"><b>runfix</b> finds leaks before strangers do, stops surprise bills, and fixes what breaks. You don&apos;t need to code. You say what you want, see the plan, and nothing changes until you say yes.</p>
+    <h1>Ship with AI.<br>Sleep at night.</h1>
+    <p class="sub"><b>runfix</b> checks every change before your users see it, fixes what breaks with proof it works, and stops surprise bills. No code needed: nothing changes without your yes.</p>
 
     <div class="countdown" role="timer" aria-live="off" aria-label="Time until launch">
       <div><b id="cd-d">--</b><span>days</span></div>
@@ -193,14 +207,14 @@
       <div><b id="cd-m">--</b><span>minutes</span></div>
       <div><b id="cd-s">--</b><span>seconds</span></div>
     </div>
-    <p class="launch-line" id="launch-line">opens 1 December 2026 · join the Discord or email us for early access</p>
+    <p class="launch-line" id="launch-line">opens 1 December 2026 · founding members get in first</p>
 
     <div class="join" id="join">
       <div class="cta-row">
-        <a class="cta primary" href="https://discord.gg/ER9rfHxDwD" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-discord"/></svg>Join the Discord</a>
-        <a class="cta" href="mailto:hello@runfix.dev?subject=runfix%20waitlist&amp;body=Please%20add%20me%20to%20the%20runfix%20waitlist.%0A%0AMy%20app%3A%20">Email us to join the waitlist</a>
+        <a class="cta primary" href="mailto:hello@runfix.dev?subject=runfix%20early%20access&amp;body=Hi%20runfix%2C%20I%27d%20like%20early%20access.%0A%0AWhat%20I%20built%20it%20with%20(Lovable%2C%20Bolt%2C%20Cursor%2C%20Replit%E2%80%A6)%3A%20%0AWhere%20it%20runs%20(Vercel%2C%20Supabase%2C%20Netlify%E2%80%A6)%3A%20%0AApp%20link%3A%20">Get early access</a>
+        <a class="cta" href="https://discord.gg/ER9rfHxDwD" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-discord"/></svg>Join the Discord</a>
       </div>
-      <p class="form-note">or write to <button type="button" class="copy" data-copy="hello@runfix.dev" title="Copy the address">hello@runfix.dev</button> · early list gets a free security check of their app</p>
+      <p class="form-note">Founding members get a free security check of their app on launch day · or write to <button type="button" class="copy" data-copy="hello@runfix.dev" title="Copy the address">hello@runfix.dev</button></p>
       <p class="status" id="status" role="status" aria-live="polite"></p>
     </div>
   </div>
@@ -209,10 +223,25 @@
 <main>
   <section class="band" aria-labelledby="problems-title">
     <div class="wrap">
-      <p class="eyebrow">what goes wrong after launch</p>
-      <h2 id="problems-title">Your app works. Then real users arrive.</h2>
-      <p class="lead">AI tools build fast. They don&apos;t watch your app at 3 a.m., read your bills, or notice when strangers can read your users&apos; data.</p>
+      <p class="eyebrow">what happens after launch</p>
+      <h2 id="problems-title">It worked yesterday.</h2>
+      <p class="lead">AI tools build fast. They don&apos;t check their own changes, watch your bill, or notice at 3 a.m. that something broke. Founders find out the hard way.</p>
       <div class="grid3">
+        <article class="card">
+          <p class="tag">data · gone</p>
+          <h3>An AI agent wiped the database</h3>
+          <p>Coding agents have deleted production databases in seconds. Most apps have no tested way to get the data back.</p>
+        </article>
+        <article class="card">
+          <p class="tag">spend · overnight</p>
+          <h3>One leaked key, a five-figure bill by morning</h3>
+          <p>Bots find exposed AI and cloud keys fast. Nobody warns you until the invoice arrives.</p>
+        </article>
+        <article class="card">
+          <p class="tag">fix · undone</p>
+          <h3>Your next prompt undid yesterday&apos;s fix</h3>
+          <p>The AI rewrites the file and the bug is back. Ten prompts later, you&apos;re fixing the same thing again.</p>
+        </article>
         <article class="card">
           <p class="tag">data · exposed</p>
           <h3>Strangers can read your users&apos; data</h3>
@@ -220,55 +249,60 @@
           <small>CVE-2025-48757 · Superblocks, May 2025</small>
         </article>
         <article class="card">
-          <p class="tag">spend · surprise</p>
-          <h3>A leaked key becomes a bill</h3>
-          <p>Code written with AI help leaks secrets about twice as often. Bots run up AI and hosting bills overnight.</p>
-          <small>GitGuardian, State of Secrets Sprawl 2026</small>
+          <p class="tag">platform · locked</p>
+          <h3>Paused, suspended, out of credits</h3>
+          <p>A free project pauses, a limit is hit, an env var goes missing. Each platform only warns about itself, if at all.</p>
         </article>
         <article class="card">
           <p class="tag">uptime · silent</p>
-          <h3>It breaks and a customer tells you</h3>
-          <p>Without monitoring, the first alert is an angry email. Fixing it means hiring someone at $50–150 an hour.</p>
-          <small>Upwork and freelancer rates, 2026</small>
+          <h3>A customer tells you it&apos;s down</h3>
+          <p>Without a safety net, the first alert is an angry email. Help costs $50–150 an hour, if you can find it.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="band alt" aria-labelledby="how-title">
+  <section class="band alt" aria-labelledby="net-title">
     <div class="wrap">
-      <p class="eyebrow">how runfix works</p>
-      <h2 id="how-title">Say what you want. runfix does the rest, after your yes.</h2>
-      <ol class="loop">
-        <li><b>Ask</b><span>&ldquo;Stop the bots hammering my API.&rdquo; Plain words.</span></li>
-        <li><b>Advice</b><span>runfix checks your own data: do you need it? It says why.</span></li>
-        <li><b>Plan</b><span>What changes, what could break, what it costs. In plain words.</span></li>
-        <li><b>Yes</b><span>Nothing happens until you say yes.</span></li>
-        <li><b>Safe rollout</b><span>New version beside the old, checked, then switched. One click undoes it.</span></li>
-      </ol>
+      <p class="eyebrow">the safety net</p>
+      <h2 id="net-title">Ship with AI. runfix catches what it breaks.</h2>
+      <p class="lead">One place that guards every change, fixes what fails and protects your money and your data. Built for founders, explained in plain English.</p>
+      <div class="grid3">
+        <article class="card"><p class="tag">before it ships</p><h3>Every change checked first</h3><p>Every push, from Lovable&apos;s sync, Cursor, Claude Code or you, is built and tested in a sandbox before it goes live. You get a plain verdict: safe, risky or blocked.</p></article>
+        <article class="card"><p class="tag">when it breaks</p><h3>Fixed, with proof</h3><p>runfix reproduces the error, proves the fix works in a sandbox, and sends you a pull request to approve. It never merges on its own.</p></article>
+        <article class="card"><p class="tag">so it stays fixed</p><h3>Fixes that stay fixed</h3><p>Each fix teaches your AI tools a rule, in AGENTS.md and .cursorrules. If a later change brings the bug back, runfix blocks it and tells you.</p></article>
+        <article class="card"><p class="tag">after every deploy</p><h3>Bad deploy? One tap back</h3><p>runfix compares errors and speed before and after each deploy. If it got worse, switch back to the last good version in one tap.</p></article>
+        <article class="card"><p class="tag">your money</p><h3>No surprise bills</h3><p>OpenAI, Anthropic, Vercel and Supabase spend in one place, with caps, spike alerts and a warning for keys anyone could abuse.</p></article>
+        <article class="card"><p class="tag">your data</p><h3>A way back, always</h3><p>Encrypted backups with restore tests that prove they work, and a free scan that tries to read your data the way a stranger would.</p></article>
+      </div>
     </div>
   </section>
 
-  <section class="band" aria-labelledby="get-title">
+  <section class="band" aria-labelledby="control-title">
     <div class="wrap">
-      <p class="eyebrow">what you get on day one</p>
-      <h2 id="get-title">One place that keeps your app safe, affordable and up.</h2>
-      <div class="grid3">
-        <article class="card"><p class="tag">prove</p><h3>Know your data is private</h3><p>runfix tries to read your data the way a stranger would. If it can, you see the proof and the fix.</p></article>
-        <article class="card"><p class="tag">guard</p><h3>A cap on every bill</h3><p>See OpenAI, Anthropic, Vercel and Supabase spend together, with warnings before a spike hurts.</p></article>
-        <article class="card"><p class="tag">watch</p><h3>Hear about problems first</h3><p>Checks every minute, explained in plain English, sent where you already are.</p></article>
-        <article class="card"><p class="tag">fix</p><h3>Fixes arrive ready to approve</h3><p>When something breaks, runfix finds the cause and prepares the fix with a test. You read it and say yes.</p></article>
-        <article class="card"><p class="tag">undo</p><h3>Every change can be undone</h3><p>Your setup is saved as versions, so going back is one click.</p></article>
-        <article class="card"><p class="tag">backups</p><h3>Backups that really restore</h3><p>Encrypted backups, and regular tests that prove they come back.</p></article>
-      </div>
+      <p class="eyebrow">you stay in control</p>
+      <h2 id="control-title">runfix does the work. You make the call.</h2>
+      <ol class="loop">
+        <li><b>It breaks</b><span>An error, a failed deploy, a spike. runfix sees it first.</span></li>
+        <li><b>Reproduced</b><span>runfix makes the bug happen again, so the cause is proven, not guessed.</span></li>
+        <li><b>Proven fix</b><span>The fix is tested in a sandbox before you ever see it.</span></li>
+        <li><b>Your yes</b><span>Approve it in the app, or from Slack or Telegram.</span></li>
+        <li><b>Watched</b><span>runfix checks the deploy afterwards. One tap undoes it.</span></li>
+      </ol>
+      <ul class="promise" aria-label="Promises">
+        <li>never merges or deploys on its own</li>
+        <li>your secrets never go into an AI prompt</li>
+        <li>every change can be undone</li>
+        <li>warnings before a platform locks you out</li>
+      </ul>
     </div>
   </section>
 
   <section class="band alt" aria-labelledby="int-title">
     <div class="wrap">
-      <p class="eyebrow">integrations</p>
-      <h2 id="int-title">Works with the tools you already use.</h2>
-      <p class="lead">24 integrations at launch, with more on the way. runfix reads from and acts on the services your app already runs on, and sends alerts where you already are.</p>
+      <p class="eyebrow">built for founders who ship with AI</p>
+      <h2 id="int-title">Works with how you build and where you run.</h2>
+      <p class="lead">Lovable, Bolt, v0, Cursor, Claude Code or Replit: if your app reaches GitHub, runfix can check every change. Agencies can watch every client app from one place.</p>
       <div class="int-grid">
         <div><h3 class="int-title">Built with</h3><ul class="ints"><li class="int"><span class="mono-ic" aria-hidden="true">L</span>Lovable</li><li class="int"><span class="mono-ic" aria-hidden="true">B</span>Bolt</li><li class="int"><svg aria-hidden="true"><use href="#i-v0"/></svg>v0</li><li class="int"><span class="mono-ic" aria-hidden="true">C</span>Cursor</li><li class="int"><svg aria-hidden="true"><use href="#i-claude"/></svg>Claude Code</li><li class="int"><svg aria-hidden="true"><use href="#i-replit"/></svg>Replit</li></ul></div>
         <div><h3 class="int-title">Hosting and data</h3><ul class="ints"><li class="int"><svg aria-hidden="true"><use href="#i-vercel"/></svg>Vercel</li><li class="int"><svg aria-hidden="true"><use href="#i-netlify"/></svg>Netlify</li><li class="int"><svg aria-hidden="true"><use href="#i-supabase"/></svg>Supabase</li><li class="int"><svg aria-hidden="true"><use href="#i-cloudflare"/></svg>Cloudflare</li><li class="int"><svg aria-hidden="true"><use href="#i-github"/></svg>GitHub</li><li class="int"><svg aria-hidden="true"><use href="#i-linux"/></svg>Any Linux VPS</li></ul></div>
@@ -279,50 +313,62 @@
       </div>
     </div>
   </section>
+
   <section class="band" aria-labelledby="price-title">
     <div class="wrap">
-      <p class="eyebrow">pricing</p>
-      <h2 id="price-title">Pay only for what runfix does.</h2>
-      <p class="lead">No plans and no monthly fee. You pay for what runfix actually does, from a balance you top up, with a cap you set.</p>
+      <p class="eyebrow">founding members</p>
+      <h2 id="price-title">Get in before 1 December.</h2>
+      <p class="lead">The first founders on the list shape what runfix fixes next, and keep the best price we&apos;ll ever offer.</p>
       <div class="offer">
         <div class="how-pay">
-          <div class="row"><span class="num">1</span><div><h3>No monthly fee</h3><p>No plans to choose and nothing to cancel. You pay only when runfix does something.</p></div></div>
-          <div class="row"><span class="num">2</span><div><h3>A small price per action</h3><p>A security check, a fix or a gigabyte of logs each has its own listed price.</p></div></div>
-          <div class="row"><span class="num">3</span><div><h3>Your cap, always</h3><p>Set the most you want to spend. runfix stops before it, never after.</p></div></div>
+          <div class="row"><span class="num">1</span><div><h3>A free security check of your app</h3><p>On launch day: can strangers read your data, are your keys exposed, what breaks first.</p></div></div>
+          <div class="row"><span class="num">2</span><div><h3>First access</h3><p>You&apos;re in before the public launch, with help setting it up.</p></div></div>
+          <div class="row"><span class="num">3</span><div><h3>Founding-member pricing, locked in</h3><p>Whatever the price becomes, yours stays at the founding rate.</p></div></div>
+          <div class="row"><span class="num">4</span><div><h3>A direct line to the team</h3><p>Talk to the people building runfix, not a ticket queue.</p></div></div>
         </div>
         <div class="price">
-          <p class="label">at launch</p>
-          <p class="big">$20<small>free credit</small></p>
+          <p class="label">pricing</p>
+          <p class="big">Founding<small>rate</small></p>
           <ul>
-            <li>for every new account, for the first 30 days</li>
-            <li>startups and agency partners can apply for $100</li>
-            <li>$10 for each founder you invite who starts using runfix</li>
+            <li>prices are announced before launch</li>
+            <li>founding members keep their rate</li>
+            <li>nothing to pay to join the list</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="band alt" aria-labelledby="community-title">
+  <section class="band alt" aria-labelledby="faq-title">
+    <div class="wrap">
+      <p class="eyebrow">questions</p>
+      <h2 id="faq-title">Fair questions.</h2>
+      <div class="faq">
+        <details><summary>Do I need to know how to code?</summary><p>No. runfix explains every problem and every fix in plain English. You read it and say yes or no.</p></details>
+        <details><summary>Will runfix change my app without asking?</summary><p>No. Every change waits for your yes, and every change can be undone. runfix never merges code or deploys on its own.</p></details>
+        <details><summary>Does it work with Lovable, Bolt or Replit?</summary><p>Yes. If your app syncs to GitHub, runfix checks every change before it goes live. If you publish straight from the builder, runfix can&apos;t stop a change in advance, but it catches problems right after and lets you switch back in one tap. We&apos;ll tell you which setup protects you best.</p></details>
+        <details><summary>What will it cost?</summary><p>Prices are announced before launch. Joining the list is free, and founding members keep their founding rate.</p></details>
+        <details><summary>Is my data safe with runfix?</summary><p>runfix asks for the least access it needs, never puts your secrets into an AI prompt, and records every action it takes. Security checks are read-only.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="community-title">
     <div class="wrap">
       <p class="eyebrow">community</p>
-      <h2 id="community-title">Ship with AI? You&apos;re not on your own.</h2>
-      <p class="lead">Join founders who build with Lovable, Cursor, Bolt, Replit and Claude Code, and keep their apps alive after launch.</p>
-      <div class="grid3">
-        <article class="card"><p class="tag">help</p><h3>Get unstuck, fast</h3><p>App down, deploy failing, key leaked? Ask in the help forum and get a real answer from people who&apos;ve been there.</p></article>
-        <article class="card"><p class="tag">live</p><h3>Weekly office hours</h3><p>Bring a broken app. We fix it live on stage, so you see exactly how it&apos;s done.</p></article>
-        <article class="card"><p class="tag">early</p><h3>Shape what we build</h3><p>Early members test runfix first and decide what it fixes next.</p></article>
-      </div>
+      <h2 id="community-title">You&apos;re not on your own.</h2>
+      <p class="lead">Join founders who build with AI and keep their apps alive after launch. Ask for help when something breaks, see fixes done live, and vote on what runfix fixes next.</p>
+      <div class="cta-row"><a class="cta ink" href="https://discord.gg/ER9rfHxDwD" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-discord"/></svg>Join the Discord</a></div>
     </div>
   </section>
 
   <section class="closing" aria-labelledby="close-title">
     <div class="wrap">
-      <h2 id="close-title">Be first in on 1 December.</h2>
-      <p class="lead">Join the Discord or email us to get on the waitlist, and get a free security check of your app on launch day.</p>
+      <h2 id="close-title">Your app is one prompt away from breaking.</h2>
+      <p class="lead">Get the safety net first. Founding members get in before 1 December, with a free security check of their app.</p>
       <div class="cta-row">
-      <a class="cta primary" href="https://discord.gg/ER9rfHxDwD" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-discord"/></svg>Join the Discord</a>
-      <a class="cta" href="mailto:hello@runfix.dev?subject=runfix%20waitlist&amp;body=Please%20add%20me%20to%20the%20runfix%20waitlist.%0A%0AMy%20app%3A%20">Email us to join the waitlist</a>
+      <a class="cta primary" href="mailto:hello@runfix.dev?subject=runfix%20early%20access&amp;body=Hi%20runfix%2C%20I%27d%20like%20early%20access.%0A%0AWhat%20I%20built%20it%20with%20(Lovable%2C%20Bolt%2C%20Cursor%2C%20Replit%E2%80%A6)%3A%20%0AWhere%20it%20runs%20(Vercel%2C%20Supabase%2C%20Netlify%E2%80%A6)%3A%20%0AApp%20link%3A%20">Get early access</a>
+      <a class="cta" href="https://discord.gg/ER9rfHxDwD" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-discord"/></svg>Join the Discord</a>
       </div>
     </div>
   </section>
@@ -330,7 +376,7 @@
 
 <footer>
   <div class="wrap">
-    <span>[runfix] launching 1 December 2026</span>
+    <span>[runfix] the safety net for apps built with AI · launching 1 December 2026</span>
     <span>questions? <a href="mailto:hello@runfix.dev">hello@runfix.dev</a> · <a href="https://discord.gg/ER9rfHxDwD" target="_blank" rel="noopener">Discord</a> · <a href="https://runfix.dev">runfix.dev</a></span>
   </div>
 </footer>
@@ -415,6 +461,7 @@
   function px(x, y, w, h, c) { ctx.fillStyle = c; ctx.fillRect(x, y, w, h); }
 
   function draw(t) {
+    if (!tower) return; // not laid out yet (first frame after a resize)
     // Sky: one indigo, with a dithered haze only near the town (never behind the text)
     px(0, 0, W, H, COLORS.sky[0]);
     const haze = tower.ground - 46;
