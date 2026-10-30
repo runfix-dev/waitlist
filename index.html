@@ -28,7 +28,7 @@
   body { background: var(--page); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.55; }
   a { color: inherit; }
   :focus-visible { outline: 2px solid var(--lamp); outline-offset: 3px; }
-  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 0 16px; }
   @media (min-width: 640px) { .wrap { padding: 0 32px; } }
   .mono { font-family: var(--mono); }
   .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
@@ -40,12 +40,13 @@
     background:
       radial-gradient(70% 60% at 22% 38%, rgba(30,24,104,.78) 0%, rgba(30,24,104,.45) 45%, rgba(30,24,104,0) 75%),
       linear-gradient(180deg, rgba(30,24,104,.35) 0%, rgba(30,24,104,0) 30%); }
-  .hero-grid { display: grid; gap: 56px; align-items: center; margin-top: 76px; }
-  @media (min-width: 1000px) { .hero-grid { grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 64px; } }
+  .hero-grid { display: grid; gap: 56px; align-items: center; margin-top: clamp(64px, 11vh, 128px); }
+  @media (min-width: 1000px) { .hero-grid { grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 80px; } }
   .hero-copy { min-width: 0; }
   .hero-art { position: relative; display: none; }
   @media (min-width: 1000px) { .hero-art { display: block; } }
   .hero .inner { position: relative; padding-top: 24px; padding-bottom: 260px; }
+  @media (min-width: 1000px) { .hero .inner { min-height: max(860px, 100vh); } }
   @media (min-width: 900px) { .hero .inner { padding-bottom: 300px; } }
   nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
   .logo { display: inline-flex; align-items: flex-end; gap: 10px; font-family: var(--display); font-weight: 500; font-size: 28px; letter-spacing: -0.03em; line-height: 1; text-decoration: none; }
@@ -57,17 +58,17 @@
   .ico { width: 16px; height: 16px; flex: none; fill: currentColor; }
   .navlink { display: inline-flex; align-items: center; gap: 8px; color: #fff; text-decoration: none; font-family: var(--mono); font-size: 13px; padding: 5px 10px; border: 1px solid rgba(201,197,245,.45); }
   .navlink:hover { background: rgba(255,255,255,.08); }
-  .hero h1 { font-family: var(--display); font-weight: 500; font-size: clamp(2.4rem, 4vw, 2.9rem); line-height: 1.1; letter-spacing: -0.03em; }
+  .hero h1 { font-family: var(--display); font-weight: 500; font-size: clamp(2.6rem, 5.2vw, 4.4rem); line-height: 1.02; letter-spacing: -0.04em; letter-spacing: -0.03em; }
   .hero h1 span { display: block; }
   @media (max-width: 999px) { .hero h1 span { display: inline; } }
-  .hero .sub { margin-top: 24px; max-width: 33rem; font-size: 1.125rem; line-height: 1.6; color: var(--indigo-100); }
+  .hero .sub { margin-top: 28px; max-width: 36rem; font-size: clamp(1.1rem, 1.35vw, 1.3rem); line-height: 1.6; color: var(--indigo-100); }
   .hero .sub b { color: #fff; font-weight: 600; }
 
   .fine { margin-top: 20px; max-width: 33rem; font-size: 15px; line-height: 1.55; color: var(--indigo-100); }
   .launch-line { margin-top: 26px; padding-top: 18px; border-top: 1px solid rgba(201,197,245,.18); max-width: 33rem; font-size: 15px; color: var(--indigo-200); }
   .launch-line b { color: #fff; font-weight: 600; font-variant-numeric: tabular-nums; }
 
-  .cta-row { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px; }
+  .cta-row { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 12px; }
   a.cta { display: inline-flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 22px; font-weight: 600; font-size: 16px; text-decoration: none; color: #fff; border: 1px solid rgba(201,197,245,.45); }
   a.cta:hover { background: rgba(255,255,255,.08); }
   a.cta.primary { background: #fff; color: var(--indigo-700); border-color: #fff; }
@@ -79,7 +80,7 @@
   .form-note { margin-top: 14px; font-family: var(--mono); font-size: 12.5px; color: var(--indigo-200); }
 
   /* the card the beam lights up */
-  .proof-card { position: relative; background: #fff; color: var(--ink); padding: 26px 26px 22px; border-top: 4px solid var(--lamp);
+  .proof-card { position: relative; max-width: 470px; margin-left: auto; background: #fff; color: var(--ink); padding: 32px 30px 26px; border-top: 4px solid var(--lamp);
     box-shadow: 0 0 0 1px rgba(255,255,255,.35), 0 0 90px 10px rgba(255,210,122,.16), 0 40px 70px -30px rgba(8,5,50,.7); }
   .pc-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; font-size: 13px; color: var(--ink-3); }
   .pc-head b { color: #12805c; font-weight: 600; }
@@ -178,14 +179,14 @@
   /* mobile app preview */
   .band.app { background: var(--indigo-800); color: #fff; }
   .band.app .eyebrow { color: var(--lamp); }
-  .band.app h2 { color: #fff; }
+  .band.app h2 { color: #fff; text-wrap: balance; max-width: 22ch; }
   .band.app .lead { color: var(--indigo-100); }
   .soon-pill { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; font-family: var(--mono); font-size: 12.5px; color: var(--indigo-100); border: 1px solid rgba(201,197,245,.35); padding: 6px 10px; }
   .soon-pill i { width: 8px; height: 8px; background: var(--lamp); }
-  .phones { margin-top: 44px; display: grid; gap: 28px; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: end; }
+  .phones { margin-top: 44px; display: grid; gap: 28px; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; }
   .phones figure { margin: 0; text-align: center; }
-  .phones img { width: 100%; max-width: 280px; height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 30px 40px rgba(8,5,50,.55)); }
-  .phones figure:nth-child(2) img { max-width: 300px; transform: translateY(-18px); }
+  .phones img { width: 100%; max-width: 270px; height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 30px 40px rgba(8,5,50,.55)); }
+  .phones figure:nth-child(2) img { max-width: 300px; }
   .phones figcaption { margin-top: 16px; font-size: 14.5px; color: var(--indigo-100); line-height: 1.45; }
   .phones figcaption b { display: block; color: #fff; font-weight: 600; font-size: 15.5px; margin-bottom: 2px; }
   @media (max-width: 760px) {
@@ -243,7 +244,7 @@
 
     <div class="hero-grid">
       <div class="hero-copy">
-        <h1><span>Keep building with AI.</span> <span>runfix catches what it breaks.</span></h1>
+        <h1><span>Keep building with AI.</span> <span>runfix catches</span> <span>what it breaks.</span></h1>
         <p class="sub"><b>runfix</b> checks every change and flags risky ones on GitHub, fixes what breaks with proof it works, and stops surprise bills. No code needed. Nothing changes without your yes.</p>
 
         <div class="cta-row" id="join">
@@ -362,15 +363,15 @@
       <span class="soon-pill"><i></i>mobile app coming early 2027 · screens are a preview</span>
       <div class="phones">
         <figure>
-          <img src="img/app-01-home.png" width="600" height="1300" loading="lazy" alt="runfix app home screen: three things need you, a proven fix waiting for approval and a risky push">
+          <img src="img/app-01-home.png" width="780" height="1688" loading="lazy" alt="runfix app home screen: three things need you, a proven fix waiting for approval and a risky push">
           <figcaption><b>What needs you</b>Problems first, in plain English.</figcaption>
         </figure>
         <figure>
-          <img src="img/app-02-fix-with-proof.png" width="600" height="1300" loading="lazy" alt="A fix with proof: reproduced, fixed, proven, nearby cases checked, Fix Lock added, with an Approve fix button">
+          <img src="img/app-02-fix-with-proof.png" width="780" height="1688" loading="lazy" alt="A fix with proof: reproduced, fixed, proven, nearby cases checked, Fix Lock added, with an Approve fix button">
           <figcaption><b>A fix with proof</b>Reproduced, proven, locked. You approve.</figcaption>
         </figure>
         <figure>
-          <img src="img/app-03-lock-screen-approve.png" width="600" height="1300" loading="lazy" alt="Lock screen notification: fix ready, approve the pull request">
+          <img src="img/app-03-lock-screen-approve.png" width="780" height="1688" loading="lazy" alt="Lock screen notification: fix ready, approve the pull request">
           <figcaption><b>Approve from anywhere</b>Even from the lock screen.</figcaption>
         </figure>
       </div>
