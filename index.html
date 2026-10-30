@@ -188,6 +188,24 @@
   footer a { color: #fff; }
 
   @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+  /* mobile app preview */
+  .band.app { background: var(--indigo-800); color: #fff; }
+  .band.app .eyebrow { color: var(--lamp); }
+  .band.app h2 { color: #fff; }
+  .band.app .lead { color: var(--indigo-100); }
+  .soon-pill { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; font-family: var(--mono); font-size: 12.5px; color: var(--indigo-100); border: 1px solid rgba(201,197,245,.35); padding: 6px 10px; }
+  .soon-pill i { width: 8px; height: 8px; background: var(--lamp); }
+  .phones { margin-top: 44px; display: grid; gap: 28px; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: end; }
+  .phones figure { margin: 0; text-align: center; }
+  .phones img { width: 100%; max-width: 280px; height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 30px 40px rgba(8,5,50,.55)); }
+  .phones figure:nth-child(2) img { max-width: 300px; transform: translateY(-18px); }
+  .phones figcaption { margin-top: 16px; font-size: 14.5px; color: var(--indigo-100); line-height: 1.45; }
+  .phones figcaption b { display: block; color: #fff; font-weight: 600; font-size: 15.5px; margin-bottom: 2px; }
+  @media (max-width: 760px) {
+    .phones { grid-template-columns: 1fr; gap: 40px; }
+    .phones img, .phones figure:nth-child(2) img { max-width: 260px; transform: none; }
+  }
 </style>
 </head>
 <body>
@@ -364,6 +382,29 @@
         <li>every change can be undone</li>
         <li>warnings before a platform locks you out</li>
       </ul>
+    </div>
+  </section>
+
+  <section class="band app" aria-labelledby="app-title">
+    <div class="wrap">
+      <p class="eyebrow">the runfix app · preview</p>
+      <h2 id="app-title">Your safety net, in your pocket.</h2>
+      <p class="lead">See what needs you, approve a proven fix and switch back a bad deploy, from your phone. Until the app ships, approvals already work from Slack and Telegram.</p>
+      <span class="soon-pill"><i></i>mobile app coming early 2027 · screens are a preview</span>
+      <div class="phones">
+        <figure>
+          <img src="img/app-01-home.png" width="600" height="1300" loading="lazy" alt="runfix app home screen: three things need you, a proven fix waiting for approval and a risky push">
+          <figcaption><b>What needs you</b>Problems first, in plain English.</figcaption>
+        </figure>
+        <figure>
+          <img src="img/app-02-fix-with-proof.png" width="600" height="1300" loading="lazy" alt="A fix with proof: reproduced, fixed, proven, nearby cases checked, Fix Lock added, with an Approve fix button">
+          <figcaption><b>A fix with proof</b>Reproduced, proven, locked. You approve.</figcaption>
+        </figure>
+        <figure>
+          <img src="img/app-03-lock-screen-approve.png" width="600" height="1300" loading="lazy" alt="Lock screen notification: fix ready, approve the pull request">
+          <figcaption><b>Approve from anywhere</b>Even from the lock screen.</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
