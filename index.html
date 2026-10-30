@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>runfix · the safety net for apps built with AI</title>
-<meta name="description" content="Ship with AI. Sleep at night. runfix checks every change before your users see it, fixes what breaks with proof, and stops surprise bills. Launching 1 December 2026.">
+<meta name="description" content="Ship with AI. Sleep at night. runfix checks every change and flags risky ones on GitHub, fixes what breaks with proof, and stops surprise bills. Free for one app. Launching 1 December 2026.">
 <meta name="theme-color" content="#3b2fa8">
 <meta property="og:title" content="runfix · the safety net for apps built with AI">
-<meta property="og:description" content="Ship with AI. Sleep at night. Checked before it ships, fixed with proof, no surprise bills. Founding members open now.">
+<meta property="og:description" content="Ship with AI. Sleep at night. Every push checked, fixed with proof, no surprise bills. Free for one app; founding members pay $19 per app, locked.">
 <meta property="og:type" content="website">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -199,7 +199,7 @@
     </nav>
 
     <h1>Ship with AI.<br>Sleep at night.</h1>
-    <p class="sub"><b>runfix</b> checks every change before your users see it, fixes what breaks with proof it works, and stops surprise bills. No code needed: nothing changes without your yes.</p>
+    <p class="sub"><b>runfix</b> checks every change and flags risky ones on GitHub, fixes what breaks with proof it works, and stops surprise bills. No code needed: nothing changes without your yes.</p>
 
     <div class="countdown" role="timer" aria-live="off" aria-label="Time until launch">
       <div><b id="cd-d">--</b><span>days</span></div>
@@ -268,9 +268,9 @@
       <h2 id="net-title">Ship with AI. runfix catches what it breaks.</h2>
       <p class="lead">One place that guards every change, fixes what fails and protects your money and your data. Built for founders, explained in plain English.</p>
       <div class="grid3">
-        <article class="card"><p class="tag">before it ships</p><h3>Every change checked first</h3><p>Every push, from Lovable&apos;s sync, Cursor, Claude Code or you, is built and tested in a sandbox before it goes live. You get a plain verdict: safe, risky or blocked.</p></article>
+        <article class="card"><p class="tag">before it ships</p><h3>Every change checked</h3><p>Every push, from Lovable&apos;s sync, Cursor, Claude Code or you, is built and tested in a sandbox. You get a plain verdict on GitHub: safe, risky or blocked. Turn on the required check (one GitHub setting, runfix shows the steps) and a blocked push can&apos;t merge.</p></article>
         <article class="card"><p class="tag">when it breaks</p><h3>Fixed, with proof</h3><p>runfix reproduces the error, proves the fix works in a sandbox, and sends you a pull request to approve. It never merges on its own.</p></article>
-        <article class="card"><p class="tag">so it stays fixed</p><h3>Fixes that stay fixed</h3><p>Each fix teaches your AI tools a rule, in AGENTS.md and .cursorrules. If a later change brings the bug back, runfix blocks it and tells you.</p></article>
+        <article class="card"><p class="tag">so it stays fixed</p><h3>Fixes that stay fixed</h3><p>Each fix teaches your AI tools a rule, in AGENTS.md and .cursorrules. If a later change brings the bug back, runfix flags it as blocked and tells you.</p></article>
         <article class="card"><p class="tag">after every deploy</p><h3>Bad deploy? One tap back</h3><p>runfix compares errors and speed before and after each deploy. If it got worse, switch back to the last good version in one tap.</p></article>
         <article class="card"><p class="tag">your money</p><h3>No surprise bills</h3><p>OpenAI, Anthropic, Vercel and Supabase spend in one place, with caps, spike alerts and a warning for keys anyone could abuse.</p></article>
         <article class="card"><p class="tag">your data</p><h3>A way back, always</h3><p>Encrypted backups with restore tests that prove they work, and a free scan that tries to read your data the way a stranger would.</p></article>
@@ -323,16 +323,18 @@
         <div class="how-pay">
           <div class="row"><span class="num">1</span><div><h3>A free security check of your app</h3><p>On launch day: can strangers read your data, are your keys exposed, what breaks first.</p></div></div>
           <div class="row"><span class="num">2</span><div><h3>First access</h3><p>You&apos;re in before the public launch, with help setting it up.</p></div></div>
-          <div class="row"><span class="num">3</span><div><h3>Founding-member pricing, locked in</h3><p>Whatever the price becomes, yours stays at the founding rate.</p></div></div>
+          <div class="row"><span class="num">3</span><div><h3>Founding-member pricing, locked in</h3><p>$19 per app a month instead of $29, or $79 instead of $129 for agencies. Yours stays at the founding price.</p></div></div>
           <div class="row"><span class="num">4</span><div><h3>A direct line to the team</h3><p>Talk to the people building runfix, not a ticket queue.</p></div></div>
         </div>
         <div class="price">
           <p class="label">pricing</p>
-          <p class="big">Founding<small>rate</small></p>
+          <p class="big">$19<small>per app a month</small></p>
           <ul>
-            <li>prices are announced before launch</li>
-            <li>founding members keep their rate</li>
-            <li>nothing to pay to join the list</li>
+            <li>Free: one app, includes $10 of usage to try proven fixes</li>
+            <li>Founder: $19 per app, later $29, locked for founding members</li>
+            <li>Agency: $79 for up to 10 apps, later $129</li>
+            <li>extra proven fixes $5, only when the fix passed and its pull request opened</li>
+            <li>billing opens before launch · nothing to pay to join the list</li>
           </ul>
         </div>
       </div>
@@ -346,8 +348,8 @@
       <div class="faq">
         <details><summary>Do I need to know how to code?</summary><p>No. runfix explains every problem and every fix in plain English. You read it and say yes or no.</p></details>
         <details><summary>Will runfix change my app without asking?</summary><p>No. Every change waits for your yes, and every change can be undone. runfix never merges code or deploys on its own.</p></details>
-        <details><summary>Does it work with Lovable, Bolt or Replit?</summary><p>Yes. If your app syncs to GitHub, runfix checks every change before it goes live. If you publish straight from the builder, runfix can&apos;t stop a change in advance, but it catches problems right after and lets you switch back in one tap. We&apos;ll tell you which setup protects you best.</p></details>
-        <details><summary>What will it cost?</summary><p>Prices are announced before launch. Joining the list is free, and founding members keep their founding rate.</p></details>
+        <details><summary>Does it work with Lovable, Bolt or Replit?</summary><p>Yes. If your app syncs to GitHub, runfix checks every change and flags risky ones on GitHub. If you publish straight from the builder, runfix can&apos;t stop a change in advance, but it catches problems right after and lets you switch back in one tap. We&apos;ll tell you which setup protects you best.</p></details>
+        <details><summary>What will it cost?</summary><p>Free covers one app and includes $10 of usage to try proven fixes. Founder is $19 per app a month (later $29) and Agency is $79 a month for up to 10 apps (later $129). Founding members keep their price. Extra proven fixes are $5, charged only when the fix passed every check and its pull request opened. Billing opens before launch.</p></details>
         <details><summary>Is my data safe with runfix?</summary><p>runfix asks for the least access it needs, never puts your secrets into an AI prompt, and records every action it takes. Security checks are read-only.</p></details>
       </div>
     </div>
