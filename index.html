@@ -28,7 +28,7 @@
   body { background: var(--page); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.55; }
   a { color: inherit; }
   :focus-visible { outline: 2px solid var(--lamp); outline-offset: 3px; }
-  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
   @media (min-width: 640px) { .wrap { padding: 0 32px; } }
   .mono { font-family: var(--mono); }
   .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
@@ -40,8 +40,8 @@
     background:
       radial-gradient(70% 60% at 22% 38%, rgba(30,24,104,.78) 0%, rgba(30,24,104,.45) 45%, rgba(30,24,104,0) 75%),
       linear-gradient(180deg, rgba(30,24,104,.35) 0%, rgba(30,24,104,0) 30%); }
-  .hero-grid { display: grid; gap: 48px; align-items: center; margin-top: 64px; }
-  @media (min-width: 1000px) { .hero-grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 56px; } }
+  .hero-grid { display: grid; gap: 56px; align-items: center; margin-top: 76px; }
+  @media (min-width: 1000px) { .hero-grid { grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 64px; } }
   .hero-copy { min-width: 0; }
   .hero-art { position: relative; display: none; }
   @media (min-width: 1000px) { .hero-art { display: block; } }
@@ -50,25 +50,22 @@
   nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
   .logo { display: inline-flex; align-items: flex-end; gap: 10px; font-family: var(--display); font-weight: 500; font-size: 28px; letter-spacing: -0.03em; line-height: 1; text-decoration: none; }
   .logo svg { width: 27px; height: 33px; }
-  .chip { white-space: nowrap; display: inline-flex; align-items: center; gap: 8px; background: #fff; color: var(--indigo-900); font-family: var(--mono); font-size: 13px; padding: 6px 10px; }
+  .chip { white-space: nowrap; display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--indigo-100); border: 1px solid rgba(201,197,245,.3); font-family: var(--mono); font-size: 12.5px; padding: 6px 10px; }
   .chip i { width: 8px; height: 8px; background: var(--lamp); display: inline-block; }
   .nav-right { display: flex; align-items: center; gap: 10px; }
   @media (max-width: 479px) { .nav-right .chip { display: none; } }
   .ico { width: 16px; height: 16px; flex: none; fill: currentColor; }
   .navlink { display: inline-flex; align-items: center; gap: 8px; color: #fff; text-decoration: none; font-family: var(--mono); font-size: 13px; padding: 5px 10px; border: 1px solid rgba(201,197,245,.45); }
   .navlink:hover { background: rgba(255,255,255,.08); }
-  .hero h1 { font-family: var(--display); font-weight: 500; font-size: clamp(2.5rem, 5.4vw, 4.1rem); line-height: 1.03; letter-spacing: -0.035em; text-wrap: balance; }
-  .hero h1 .soft { display: block; color: var(--indigo-200); }
-  .hero .sub { margin-top: 22px; max-width: 34rem; font-size: 1.12rem; line-height: 1.6; color: var(--indigo-100); }
+  .hero h1 { font-family: var(--display); font-weight: 500; font-size: clamp(2.4rem, 4vw, 2.9rem); line-height: 1.1; letter-spacing: -0.03em; }
+  .hero h1 span { display: block; }
+  @media (max-width: 999px) { .hero h1 span { display: inline; } }
+  .hero .sub { margin-top: 24px; max-width: 33rem; font-size: 1.125rem; line-height: 1.6; color: var(--indigo-100); }
   .hero .sub b { color: #fff; font-weight: 600; }
 
-  .launch { margin-top: 30px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; }
-  .countdown { display: inline-flex; gap: 6px; }
-  .countdown div { min-width: 58px; padding: 8px 10px 7px; text-align: center; background: rgba(255,255,255,.07); border: 1px solid rgba(201,197,245,.22); }
-  .countdown b { display: block; font-family: var(--display); font-weight: 500; font-size: 1.55rem; line-height: 1; font-variant-numeric: tabular-nums; }
-  .countdown span { display: block; margin-top: 4px; font-family: var(--mono); font-size: 10.5px; letter-spacing: .04em; color: var(--indigo-200); }
-  .launch-line { font-family: var(--mono); font-size: 12.5px; line-height: 1.5; color: var(--indigo-200); max-width: 15rem; }
-  .launch-line b { color: #fff; font-weight: 500; }
+  .fine { margin-top: 20px; max-width: 33rem; font-size: 15px; line-height: 1.55; color: var(--indigo-100); }
+  .launch-line { margin-top: 26px; padding-top: 18px; border-top: 1px solid rgba(201,197,245,.18); max-width: 33rem; font-size: 15px; color: var(--indigo-200); }
+  .launch-line b { color: #fff; font-weight: 600; font-variant-numeric: tabular-nums; }
 
   .cta-row { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px; }
   a.cta { display: inline-flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 22px; font-weight: 600; font-size: 16px; text-decoration: none; color: #fff; border: 1px solid rgba(201,197,245,.45); }
@@ -80,34 +77,23 @@
   a.cta.ink:hover { background: var(--indigo-800); }
   @media (max-width: 479px) { a.cta { width: 100%; justify-content: center; } }
   .form-note { margin-top: 14px; font-family: var(--mono); font-size: 12.5px; color: var(--indigo-200); }
-  .perks { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px 20px; list-style: none; padding: 0; font-size: 14px; color: var(--indigo-100); }
-  .perks li { display: inline-flex; align-items: center; gap: 8px; }
-  .perks li::before { content: ""; width: 8px; height: 8px; background: var(--lamp); flex: none; }
 
-  /* product card in the hero */
-  .proof-card { position: relative; background: #fff; color: var(--ink); padding: 22px 22px 18px; box-shadow: 0 40px 80px -24px rgba(8,5,50,.65), 0 0 0 1px rgba(255,255,255,.4); }
-  .pc-head { display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 12px; color: var(--ink-3); }
-  .pc-head i { width: 8px; height: 8px; background: var(--alarm); }
-  .pc-head .pc-time { margin-left: auto; }
-  .pc-tags { display: flex; gap: 6px; margin-top: 14px; }
-  .pc-tag { font-family: var(--mono); font-size: 11px; padding: 3px 7px; border: 1px solid #b7ead0; background: #dff6ea; color: #12805c; }
-  .pc-tag.n { border-color: var(--indigo-100); background: var(--indigo-50); color: var(--indigo-700); }
-  .pc-title { margin-top: 10px; font-family: var(--display); font-weight: 500; font-size: 1.45rem; letter-spacing: -0.02em; line-height: 1.2; }
-  .pc-steps { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 2px; }
-  .pc-steps li { display: grid; grid-template-columns: 24px 1fr; gap: 12px; align-items: start; padding: 8px 0; border-top: 1px solid #efeef8; font-size: 14px; line-height: 1.4; }
-  .pc-steps li:first-child { border-top: 0; }
+  /* the card the beam lights up */
+  .proof-card { position: relative; background: #fff; color: var(--ink); padding: 26px 26px 22px; border-top: 4px solid var(--lamp);
+    box-shadow: 0 0 0 1px rgba(255,255,255,.35), 0 0 90px 10px rgba(255,210,122,.16), 0 40px 70px -30px rgba(8,5,50,.7); }
+  .pc-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; font-size: 13px; color: var(--ink-3); }
+  .pc-head b { color: #12805c; font-weight: 600; }
+  .pc-title { margin-top: 10px; font-family: var(--display); font-weight: 500; font-size: 1.6rem; letter-spacing: -0.02em; line-height: 1.18; text-wrap: balance; }
+  .pc-steps { list-style: none; padding: 0; margin: 22px 0 0; }
+  .pc-steps li { position: relative; display: grid; grid-template-columns: 22px 1fr; gap: 14px; padding-bottom: 16px; font-size: 15px; line-height: 1.4; }
+  .pc-steps li:not(:last-child)::before { content: ""; position: absolute; left: 10px; top: 24px; bottom: 2px; width: 2px; background: #cdeedd; }
   .pc-steps i { width: 22px; height: 22px; display: grid; place-items: center; background: #12805c; color: #fff; font-style: normal; font-size: 12px; font-weight: 700; }
   .pc-steps b { font-weight: 600; }
-  .pc-steps span { display: block; color: var(--ink-3); font-size: 13px; }
-  .pc-actions { display: grid; grid-template-columns: .8fr 1.2fr; gap: 10px; margin-top: 16px; }
-  .pc-btn { text-align: center; padding: 12px; font-weight: 600; font-size: 15px; background: var(--indigo-600); color: #fff; border: 1.5px solid var(--indigo-600); }
+  .pc-steps span { display: block; color: var(--ink-3); font-size: 13.5px; margin-top: 2px; }
+  .pc-actions { display: grid; grid-template-columns: 1fr 1.6fr; gap: 10px; margin-top: 6px; }
+  .pc-btn { text-align: center; padding: 13px; font-weight: 600; font-size: 15px; background: var(--indigo-600); color: #fff; border: 1.5px solid var(--indigo-600); }
   .pc-btn.ghost { background: #fff; color: var(--indigo-600); }
-  .pc-foot { margin-top: 12px; text-align: center; font-family: var(--mono); font-size: 11.5px; color: var(--ink-3); }
-  .float-chip { position: absolute; display: inline-flex; align-items: center; gap: 8px; background: var(--indigo-900); color: #fff; border: 1px solid rgba(201,197,245,.35); font-family: var(--mono); font-size: 12px; padding: 8px 12px; box-shadow: 0 16px 30px -12px rgba(8,5,50,.6); }
-  .float-chip i { width: 8px; height: 8px; background: var(--ok); }
-  .float-chip.a { top: -18px; left: -28px; }
-  .float-chip.b { bottom: -18px; right: -20px; }
-  .float-chip.b i { background: var(--lamp); }
+  .pc-foot { margin-top: 14px; font-size: 13px; color: var(--ink-3); }
   .copy { background: none; border: 0; border-bottom: 1px dashed currentColor; color: #fff; font: inherit; padding: 0; cursor: pointer; }
   .status { margin-top: 12px; min-height: 1.5em; font-size: .98rem; }
   .status.ok { color: #fff; }
@@ -257,47 +243,30 @@
 
     <div class="hero-grid">
       <div class="hero-copy">
-        <h1>Keep building with AI. <span class="soft">runfix catches what it breaks.</span></h1>
-        <p class="sub"><b>runfix</b> checks every change and flags risky ones on GitHub, fixes what breaks with proof it works, and stops surprise bills. No code needed: nothing changes without your yes.</p>
+        <h1><span>Keep building with AI.</span> <span>runfix catches what it breaks.</span></h1>
+        <p class="sub"><b>runfix</b> checks every change and flags risky ones on GitHub, fixes what breaks with proof it works, and stops surprise bills. No code needed. Nothing changes without your yes.</p>
 
         <div class="cta-row" id="join">
           <a class="cta primary" href="mailto:hello@runfix.dev?subject=runfix%20early%20access&amp;body=Hi%20runfix%2C%20I%27d%20like%20early%20access.%0A%0AWhat%20I%20built%20it%20with%20(Lovable%2C%20Bolt%2C%20Cursor%2C%20Replit%E2%80%A6)%3A%20%0AWhere%20it%20runs%20(Vercel%2C%20Supabase%2C%20Netlify%E2%80%A6)%3A%20%0AApp%20link%3A%20">Get early access</a>
           <a class="cta" href="https://discord.gg/ER9rfHxDwD" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-discord"/></svg>Join the Discord</a>
         </div>
-        <ul class="perks" aria-label="Founding members get">
-          <li>Free security check on launch day</li>
-          <li>Founding price, locked</li>
-          <li>Never merges on its own</li>
-        </ul>
+        <p class="fine">Founding members get a free security check of their app on launch day and keep their price for good.</p>
 
-        <div class="launch">
-          <div class="countdown" role="timer" aria-live="off" aria-label="Time until launch">
-            <div><b id="cd-d">--</b><span>days</span></div>
-            <div><b id="cd-h">--</b><span>hrs</span></div>
-            <div><b id="cd-m">--</b><span>min</span></div>
-            <div><b id="cd-s">--</b><span>sec</span></div>
-          </div>
-          <p class="launch-line" id="launch-line">opens <b>1 December 2026</b> · founding members get in first</p>
-        </div>
-        <p class="form-note">or write to <button type="button" class="copy" data-copy="hello@runfix.dev" title="Copy the address">hello@runfix.dev</button></p>
+        <p class="launch-line" id="launch-line" role="timer" aria-live="off">Doors open on <b>1 December</b>, in <b><span id="cd-d">--</span> days, <span id="cd-h">--</span>:<span id="cd-m">--</span>:<span id="cd-s">--</span></b>.</p>
         <p class="status" id="status" role="status" aria-live="polite"></p>
       </div>
 
       <div class="hero-art" aria-hidden="true">
         <div class="proof-card">
-          <span class="float-chip a"><i></i>safe deploy · last push · safe</span>
-          <div class="pc-head"><i></i>auto-heal · acme chat<span class="pc-time">2 min ago</span></div>
-          <div class="pc-tags"><span class="pc-tag">proven</span><span class="pc-tag n">waiting for your yes</span></div>
-          <p class="pc-title">Checkout fails on an empty cart</p>
-          <ul class="pc-steps">
-            <li><i>✓</i><div><b>Reproduced</b><span>made it happen again in a safe copy of your app</span></div></li>
-            <li><i>✓</i><div><b>Proven</b><span>a test fails before the fix and passes after</span></div></li>
-            <li><i>✓</i><div><b>Nearby cases checked</b><span>no half-fix: one item, removed items, full cart</span></div></li>
-            <li><i>✓</i><div><b>Fix Lock added</b><span>your AI learns the rule; the bug can&apos;t come back</span></div></li>
-          </ul>
+          <div class="pc-head"><b>Fix ready for your yes</b><span>2 minutes ago</span></div>
+          <p class="pc-title">Checkout fails when the cart is empty</p>
+          <ol class="pc-steps">
+            <li><i>✓</i><div><b>Reproduced</b><span>Made it happen again in a safe copy of your app</span></div></li>
+            <li><i>✓</i><div><b>Proven</b><span>A new test fails before the fix and passes after</span></div></li>
+            <li><i>✓</i><div><b>Locked</b><span>Your AI learns the rule, so the bug stays fixed</span></div></li>
+          </ol>
           <div class="pc-actions"><span class="pc-btn ghost">Not now</span><span class="pc-btn">Approve fix</span></div>
-          <p class="pc-foot">runfix never merges on its own · you can undo it</p>
-          <span class="float-chip b"><i></i>spend · on track · under your cap</span>
+          <p class="pc-foot">runfix never merges on its own. You can undo it.</p>
         </div>
       </div>
     </div>
@@ -520,7 +489,7 @@
     const ms = LAUNCH - Date.now();
     if (ms <= 0) {
       ["cd-d", "cd-h", "cd-m", "cd-s"].forEach((id) => (el(id).textContent = "00"));
-      el("launch-line").textContent = "runfix is live · sign up at runfix.dev";
+      el("launch-line").textContent = "runfix is live. Sign up at runfix.dev.";
       return false;
     }
     const s = Math.floor(ms / 1000);
