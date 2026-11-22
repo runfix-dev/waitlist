@@ -1,0 +1,12 @@
+name: supply-chain
+on:
+  push: { branches: [main] }
+  pull_request: {}
+  schedule: [{ cron: "23 5 * * 1" }]
+permissions:
+  contents: read
+jobs:
+  scan:
+    uses: runfix-dev/.github/.github/workflows/supply-chain.yml@c495730c3a44c5fcabcfd9462801a114f594a726 # main
+    with:
+      osv-exclude: ""
