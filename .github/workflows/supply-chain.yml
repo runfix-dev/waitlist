@@ -7,6 +7,6 @@ permissions:
   contents: read
 jobs:
   scan:
-    uses: runfix-dev/.github/.github/workflows/supply-chain.yml@c495730c3a44c5fcabcfd9462801a114f594a726 # main
+    uses: runfix-dev/.github/.github/workflows/supply-chain.yml@fffe967c392ba0b8eccddfb8d4d3948c05281e1b # feat/supply-chain; merge .github with a merge commit so this SHA stays on main
     with:
       osv-exclude: ""
