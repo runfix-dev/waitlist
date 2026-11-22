@@ -1,0 +1,12 @@
+name: supply-chain
+on:
+  push: { branches: [main] }
+  pull_request: {}
+  schedule: [{ cron: "23 5 * * 1" }]
+permissions:
+  contents: read
+jobs:
+  scan:
+    uses: runfix-dev/.github/.github/workflows/supply-chain.yml@fffe967c392ba0b8eccddfb8d4d3948c05281e1b # feat/supply-chain; merge .github with a merge commit so this SHA stays on main
+    with:
+      osv-exclude: ""
